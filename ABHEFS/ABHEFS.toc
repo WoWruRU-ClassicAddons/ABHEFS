@@ -1,6 +1,8 @@
 ## Interface: 11200
-## Dependencies: 
 ## Title: ABHelper Estimated Final Score Redux
 ## Author: Corvina and Znadul
 ## Notes: 
+## Notes-ruRU: Информирует о контроле точек на БГ "Низина Арати"
+## Version: 0.8
+
 ABHEFS.xml

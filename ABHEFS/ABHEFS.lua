@@ -86,12 +86,6 @@ local ABHEFS_isWinning = { faction = 0, score = 0}; -- faction: 1-alliance 2-hor
 -- GLOBAL FUNCTIONS
 ---------------------------------------------------------------------------------
 
-function ABHEFSPrint(msg) --*
-	if (DEFAULT_CHAT_FRAME) then
-		DEFAULT_CHAT_FRAME:AddMessage(msg, 1.0, 0.5, 1.0);
-	end
-end
-
 function ABHEFS_ResetStatus() --*
 	for i, value in ABHEFS_FlagsStatus do
 		value.status = -1;
@@ -133,14 +127,14 @@ function ABHEFS_SlashHandler(command) --*
 	if (cmd == "on") then
 		-- hook
 		WorldStateAlwaysUpFrame_Update = ABHEFS_WorldStateAlwaysUpFrame_Update;
-		ABHEFSPrint("ABHEFS enabled");
+		DEFAULT_CHAT_FRAME:AddMessage(ABHEFS_ENABLED);
 		WorldStateAlwaysUpFrame_Update();
 	end
 
 	if (cmd == "off") then
 		-- unhook
 		WorldStateAlwaysUpFrame_Update = lOriginalWorldStateAlwaysUpFrame_Update;
-		ABHEFSPrint("ABHEFS disabled");
+		DEFAULT_CHAT_FRAME:AddMessage(ABHEFS_DISABLED);
 		getglobal("ABHEFS_Frame"):Hide();
 --		WorldStateAlwaysUpFrame_Update();
 	end
@@ -152,9 +146,9 @@ function ABHEFS_SlashHandler(command) --*
 
 
 	if ((cmd == "") or (cmd == "help")) then
-		ABHEFSPrint("Usage:");
-		ABHEFSPrint(" /ABHEFS (on/off)  | Enable / Disable");
-		ABHEFSPrint(" /ABHEFS resetpos  | Reset the frame position");
+		DEFAULT_CHAT_FRAME:AddMessage(ABHEFS_CMD_0);
+		DEFAULT_CHAT_FRAME:AddMessage(ABHEFS_CMD_1);
+		DEFAULT_CHAT_FRAME:AddMessage(ABHEFS_CMD_2);
 	end
 
 end
@@ -414,7 +408,7 @@ function ABHEFS_OnLoad()
 	
 	ABHEFS_LastTimersUpdate = time();
 	
-	ABHEFSPrint("ABHEFS redux v."..ABHEFS_VERSION.."has loaded!");
+	DEFAULT_CHAT_FRAME:AddMessage("ABHEFS redux v."..ABHEFS_VERSION..ABHEFS_LOADED);
 	
 	SLASH_ABHEFS1 = "/ABHEFS";
 	SlashCmdList["ABHEFS"] = ABHEFS_SlashHandler;

@@ -15,7 +15,7 @@
 					<Anchors>
 						<Anchor point="TOPLEFT"/>
 					</Anchors>
-
+					
 				</Texture>
 				<FontString name="$parentTimeText" inherits="GameFontNormalSmall" text="prueba">
 					<Anchors>
@@ -143,7 +143,7 @@
 				</FontString>
 			</Layer>
 		</Layers>
-
+		
 		<Frames>
 			<Frame name="ABHEFS_HordeFlag1" inherits="ABHEFS_HordeFlagTemplate">
 				<Anchors>
@@ -174,7 +174,7 @@
 					<Anchor point="TOPLEFT" relativeTo="ABHEFS_HordeFlag4" relativePoint="BOTTOMLEFT"/>
 				</Anchors>
 			</Frame>
-
+			
 			<Frame name="ABHEFS_AlianceFlag1" inherits="ABHEFS_AlianceFlagTemplate">
 				<Anchors>
 					<Anchor point="RIGHT" relativeTo="ABHEFS_Frame" relativePoint="LEFT">
@@ -204,7 +204,7 @@
 					<Anchor point="TOPLEFT" relativeTo="ABHEFS_AlianceFlag4" relativePoint="BOTTOMLEFT"/>
 				</Anchors>
 			</Frame>
-
+			
 		</Frames>
 		
 		<Scripts>
